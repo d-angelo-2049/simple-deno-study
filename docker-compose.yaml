@@ -1,0 +1,13 @@
+version: "3"
+services:
+  deno-study-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/simple-deno-study
+    ports:
+      - 1993:1993
+    tty: true
+    stdin_open: true
+    command: tail -f /dev/null
